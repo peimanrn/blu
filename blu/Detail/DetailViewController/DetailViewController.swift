@@ -11,7 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     let viewModel: DetailViewModel
 
-    let imageView: UIImageView = {
+    private(set) lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 50
         imageView.clipsToBounds = true
@@ -19,33 +19,63 @@ class DetailViewController: UIViewController {
         return imageView
     }()
 
-    let primaryLabel: UILabel = {
+    private(set) lazy var primaryLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 24)
         label.textColor = .black
         return label
     }()
 
-    let secondaryLabel: UILabel = {
+    private(set) lazy var secondaryLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = .gray
         return label
     }()
 
-    let favoriteButton: UIButton = {
+    private(set) lazy var cardTypeLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textColor = .gray
+        return label
+    }()
+
+    private(set) lazy var noteLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Note:"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .darkGray
+        return label
+    }()
+
+    private(set) lazy var noteTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "This is a sample description."
+        textView.textColor = .black
+        textView.backgroundColor = .white
+        textView.layer.cornerRadius = 8
+        textView.layer.borderColor = UIColor.darkGray.cgColor
+        textView.layer.borderWidth = 2
+        textView.textContainerInset = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
+        textView.isEditable = false
+        return textView
+    }()
+
+    private(set) lazy var favoriteButton: UIButton = {
         let button = UIButton()
         button.setTitle("Favorite", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.darkGray, for: .normal)
         button.backgroundColor = .white
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.black.cgColor
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 8
+        button.layer.shadowColor = UIColor.darkGray.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowRadius = 4
+        button.layer.shadowOpacity = 0.4
         button.setImage(UIImage(systemName: "star.fill"), for: .normal)
         button.imageView?.tintColor = .systemYellow
         button.imageView?.contentMode = .scaleAspectFit
-        button.configuration?.imagePadding = 10
-        button.addTarget(self, action: #selector(didTapFavoriteButton), for: .touchUpInside)
+        button.contentEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
+        button.addTarget(self, action: #selector(self.didTapFavoriteButton), for: .touchUpInside)
         return button
     }()
 
@@ -62,6 +92,13 @@ class DetailViewController: UIViewController {
         }
         self.primaryLabel.text = self.viewModel.model.person.fullName
         self.secondaryLabel.text = self.viewModel.model.card.cardNumber
+        self.cardTypeLabel.text = "Card type: \(self.viewModel.model.card.cardType)"
+        if let note = self.viewModel.model.note {
+            self.noteTextView.text = self.viewModel.model.note
+        } else {
+            self.noteLabel.isHidden = true
+            self.noteTextView.isHidden = true
+        }
         if self.viewModel.isFavorite() {
             self.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
             self.favoriteButton.setTitle("Unfavorite", for: .normal)

@@ -13,6 +13,9 @@ extension DetailViewController {
         self.setupImageView()
         self.setupPrimaryLabel()
         self.setupSecondaryLabel()
+        self.setupCardTypeLabel()
+        self.setupNoteLabel()
+        self.setupNoteTextArea()
         self.setupFavoriteButton()
     }
 
@@ -45,13 +48,40 @@ extension DetailViewController {
         }
     }
 
+    private func setupCardTypeLabel() {
+        view.addSubview(self.cardTypeLabel)
+        self.cardTypeLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(self.secondaryLabel.snp.bottom).offset(5)
+        }
+    }
+
+    private func setupNoteLabel() {
+        view.addSubview(noteLabel)
+        self.noteLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.cardTypeLabel.snp.bottom).offset(20)
+            make.leading.equalTo(20)
+        }
+    }
+
+    private func setupNoteTextArea() {
+        view.addSubview(self.noteTextView)
+        self.noteTextView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(self.noteLabel.snp.bottom).offset(10)
+            make.leading.equalTo(20)
+            make.height.equalTo(150)
+        }
+    }
+
+
     private func setupFavoriteButton() {
         view.addSubview(self.favoriteButton)
         self.favoriteButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
-            make.width.equalTo(120)
-            make.height.equalTo(40)
+            make.leading.equalTo(60)
+            make.height.equalTo(50)
         }
     }
 }
