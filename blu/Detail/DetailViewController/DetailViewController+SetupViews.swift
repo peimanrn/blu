@@ -74,7 +74,6 @@ extension DetailViewController {
         }
     }
 
-
     private func setupFavoriteButton() {
         view.addSubview(self.favoriteButton)
         self.favoriteButton.snp.makeConstraints { make in

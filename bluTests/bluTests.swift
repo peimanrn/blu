@@ -33,4 +33,20 @@ final class bluTests: XCTestCase {
         }
     }
 
+    func testFetchDestinations() throws {
+        let generalService = GeneralService()
+        let expectation = self.expectation(description: "Fetching destinations")
+        generalService.fetchDestinations(for: 1) { result in
+            switch result {
+            case .success(let destinations):
+                XCTAssertFalse(destinations.isEmpty, "The list of destinations should not be empty.")
+            case .failure(let error):
+                XCTFail("Fetch failed with error: \(error)")
+            }
+
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+
 }
