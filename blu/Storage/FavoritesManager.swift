@@ -14,20 +14,20 @@ class FavoritesManager {
     var favoriteDestinations: [Destination]
 
     func isFavorite(_ destination: Destination) -> Bool {
-        return favoriteDestinations.contains(destination)
+        self.favoriteDestinations.contains(destination)
     }
 
     func add(_ destination: Destination) {
-        if !isFavorite(destination) {
-            favoriteDestinations.append(destination)
+        if !self.isFavorite(destination) {
+            self.favoriteDestinations.append(destination)
         }
     }
 
     func remove(_ destination: Destination) {
-        favoriteDestinations.removeAll { $0 == destination }
+        self.favoriteDestinations.removeAll { $0 == destination }
     }
 
     func removeAll() {
-        favoriteDestinations = []
+        self.favoriteDestinations = []
     }
 }

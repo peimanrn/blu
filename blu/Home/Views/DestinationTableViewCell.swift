@@ -10,7 +10,7 @@ import UIKit
 
 class DestinationTableViewCell: UITableViewCell {
 
-    private lazy var personImageView: UIImageView = {
+    private(set) lazy var personImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .lightGray
         imageView.layer.cornerRadius = 25
@@ -18,20 +18,20 @@ class DestinationTableViewCell: UITableViewCell {
         return imageView
     }()
 
-    private lazy var primaryTextLabel: UILabel = {
+    private(set) lazy var primaryTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return label
     }()
 
-    private lazy var secondaryTextLabel: UILabel = {
+    private(set) lazy var secondaryTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = UIColor.gray
         return label
     }()
 
-    let favoriteImage: UIImageView = {
+    private(set) lazy var favoriteImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "star.fill")
         imageView.tintColor = .systemYellow
@@ -39,7 +39,7 @@ class DestinationTableViewCell: UITableViewCell {
         return imageView
     }()
 
-    private lazy var rightArrowImageView: UIImageView = {
+    private(set) lazy var rightArrowImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "chevron.right")
         imageView.contentMode = .scaleAspectFit

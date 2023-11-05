@@ -47,7 +47,7 @@ class HomeViewController: UIViewController {
         view.separatorStyle = .none
         view.register(DestinationTableViewCell.self, forCellReuseIdentifier: DestinationTableViewCell.reuseId)
         view.refreshControl = self.refreshControl
-        view.tableFooterView = destinationTableViewActivityIndicator
+        view.tableFooterView = self.destinationTableViewActivityIndicator
         return view
     }()
 
