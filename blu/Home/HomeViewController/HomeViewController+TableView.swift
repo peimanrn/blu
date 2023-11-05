@@ -27,12 +27,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
                    forRowAt indexPath: IndexPath) {
         if indexPath.row == viewModel.items.count - 1, !viewModel.isLoading, !viewModel.hasEnded {
-            showActivityIndicator()
+            self.destinationTableViewActivityIndicator.startAnimating()
             viewModel.isLoading = true
             viewModel.currentPage += 1
             viewModel.fetchData { _ in
                 DispatchQueue.main.async {
-                    self.stopActivityIndicator()
+                    self.destinationTableViewActivityIndicator.startAnimating()
                     self.viewModel.isLoading = false
                     self.updateConstraints(hideFavorites: self.viewModel.shouldHideFavorite)
                     self.favoritesCollectinoView.reloadData()

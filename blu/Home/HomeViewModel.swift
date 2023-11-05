@@ -38,7 +38,7 @@ class HomeViewModel {
     }
 
     func updateFavorites() {
-        let userDefaultFavorites = self.favoriteManager.getAll()
+        let userDefaultFavorites = self.favoriteManager.favoriteDestinations
         let filteredFavorites = Set(items).intersection(Set(userDefaultFavorites)).map { $0 }
         self.favorites = filteredFavorites
     }
@@ -52,7 +52,7 @@ class HomeViewModel {
     }
 
     func fetchData(completion: @escaping (Result<[Destination], Error>) -> Void) {
-        self.generalService.fetchDestinations(for: self.currentPage) { result in
+        self.generalService.fetchDestinations(for: self.currentPage) { [self] result in
             switch result {
             case let .success(destinations):
                 if destinations.isEmpty {

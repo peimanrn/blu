@@ -35,7 +35,7 @@
 		B35A0DD82AF1B653006228E9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B35A0DD72AF1B653006228E9 /* Kingfisher */; };
 		B3D779482AF2CAD800D3CD1E /* HomeViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D779472AF2CAD800D3CD1E /* HomeViewController+CollectionView.swift */; };
 		B3D7794A2AF2D04C00D3CD1E /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D779492AF2D04C00D3CD1E /* FavoritesCollectionViewCell.swift */; };
-		B3D7794D2AF3C5D400D3CD1E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D7794C2AF3C5D400D3CD1E /* UserDefaultsManager.swift */; };
+		B3D7794D2AF3C5D400D3CD1E /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D7794C2AF3C5D400D3CD1E /* UserDefaultsWrapper.swift */; };
 		B3D7794F2AF3C66900D3CD1E /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D7794E2AF3C66900D3CD1E /* FavoritesManager.swift */; };
 		B3D779512AF4485D00D3CD1E /* DetailViewController+SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D779502AF4485D00D3CD1E /* DetailViewController+SetupViews.swift */; };
 		B3D779532AF5751600D3CD1E /* HomeViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D779522AF5751600D3CD1E /* HomeViewController+SearchBar.swift */; };
@@ -90,7 +90,7 @@
 		B35A0DD42AF1AABC006228E9 /* BLActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLActivityIndicator.swift; sourceTree = "<group>"; };
 		B3D779472AF2CAD800D3CD1E /* HomeViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		B3D779492AF2D04C00D3CD1E /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
-		B3D7794C2AF3C5D400D3CD1E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		B3D7794C2AF3C5D400D3CD1E /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		B3D7794E2AF3C66900D3CD1E /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		B3D779502AF4485D00D3CD1E /* DetailViewController+SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+SetupViews.swift"; sourceTree = "<group>"; };
 		B3D779522AF5751600D3CD1E /* HomeViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+SearchBar.swift"; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 		B3D7794B2AF3C5C500D3CD1E /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				B3D7794C2AF3C5D400D3CD1E /* UserDefaultsManager.swift */,
+				B3D7794C2AF3C5D400D3CD1E /* UserDefaultsWrapper.swift */,
 				B3D7794E2AF3C66900D3CD1E /* FavoritesManager.swift */,
 			);
 			path = Storage;
@@ -440,7 +440,7 @@
 				B35A0DC42AF17949006228E9 /* Destination.swift in Sources */,
 				B35A0DC22AF16C50006228E9 /* HomeViewController+TableView.swift in Sources */,
 				B3D7794F2AF3C66900D3CD1E /* FavoritesManager.swift in Sources */,
-				B3D7794D2AF3C5D400D3CD1E /* UserDefaultsManager.swift in Sources */,
+				B3D7794D2AF3C5D400D3CD1E /* UserDefaultsWrapper.swift in Sources */,
 				B3D779482AF2CAD800D3CD1E /* HomeViewController+CollectionView.swift in Sources */,
 				B35A0DC02AF16C42006228E9 /* HomeViewController+SetupView.swift in Sources */,
 				B35A0DD52AF1AABC006228E9 /* BLActivityIndicator.swift in Sources */,

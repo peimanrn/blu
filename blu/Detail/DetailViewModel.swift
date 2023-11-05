@@ -25,6 +25,5 @@ class DetailViewModel {
 
     func removeFromFavorite() {
         self.favoriteManager.remove(self.model)
-        print("removed \(self.model)")
     }
 }

@@ -47,6 +47,14 @@ class HomeViewController: UIViewController {
         view.separatorStyle = .none
         view.register(DestinationTableViewCell.self, forCellReuseIdentifier: DestinationTableViewCell.reuseId)
         view.refreshControl = self.refreshControl
+        view.tableFooterView = destinationTableViewActivityIndicator
+        return view
+    }()
+
+    private(set) lazy var destinationTableViewActivityIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        view.color = .black
+        view.hidesWhenStopped = true
         return view
     }()
 
